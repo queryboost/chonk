@@ -1,11 +1,11 @@
 [project]
-name = "chonk"
+name = "chonkster"
 version = "0.0.1"
 description = "Turn your documents into an analytics-ready wide table."
 authors = [
   {name = "Johnson Kuan", email = "johnson@queryboost.com"},
 ]
-keywords = ["chonk", "documents", "tables", "analytics", "parsing"]
+keywords = ["chonkster", "chonk", "documents", "tables", "analytics", "parsing"]
 readme = "README.md"
 requires-python = ">=3.9"
 dependencies = []
@@ -36,7 +36,7 @@ build-backend = "hatchling.build"
 include = ["src/*"]
 
 [tool.hatch.build.targets.wheel]
-packages = ["src/chonk"]
+packages = ["src/chonkster"]
 
 [tool.hatch.build.targets.sdist]
 include = [
@@ -95,4 +95,4 @@ length-sort = true
 length-sort-straight = true
 combine-as-imports = true
 extra-standard-library = ["typing_extensions"]
-known-first-party = ["chonk", "tests"]
+known-first-party = ["chonkster", "tests"]
