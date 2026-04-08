@@ -1,8 +1,10 @@
-# chonkster
+# chonk
 
-**chonkster** transforms your documents into an analytics-ready wide table. One row per page. One command.
+**chonk** transforms your documents into an analytics-ready wide table. One row per page. One command.
 
 ## Installation
+
+Coming soon as `chonk`. In the meantime:
 
 ```bash
 pip install chonkster
