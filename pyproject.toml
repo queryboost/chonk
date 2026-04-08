@@ -1,6 +1,6 @@
 [project]
 name = "chonkster"
-version = "0.0.1"
+version = "0.0.2"
 description = "Turn your documents into an analytics-ready wide table."
 authors = [
   {name = "Johnson Kuan", email = "johnson@queryboost.com"},
@@ -8,7 +8,11 @@ authors = [
 keywords = ["chonkster", "chonk", "documents", "tables", "analytics", "parsing"]
 readme = "README.md"
 requires-python = ">=3.9"
-dependencies = []
+dependencies = [
+    "docling>=2.0.0",
+    "pandas>=1.5",
+    "pydantic>=2.0",
+]
 classifiers = [
   "Intended Audience :: Developers",
   "Programming Language :: Python :: 3.9",
@@ -26,7 +30,13 @@ Homepage = "https://queryboost.com"
 [tool.uv]
 managed = true
 required-version = ">=0.5.0"
-dev-dependencies = []
+dev-dependencies = [
+    "pyright==1.1.406",
+    "mypy",
+    "pytest",
+    "pytest-cov",
+    "ruff",
+]
 
 [build-system]
 requires = ["hatchling==1.26.3", "hatch-fancy-pypi-readme"]
@@ -96,3 +106,23 @@ length-sort-straight = true
 combine-as-imports = true
 extra-standard-library = ["typing_extensions"]
 known-first-party = ["chonkster", "tests"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+xfail_strict = true
+filterwarnings = [
+  "error"
+]
+
+[tool.pyright]
+ignore = ["**/docling", "**/docling_core"]
+
+[tool.mypy]
+
+[[tool.mypy.overrides]]
+module = [
+  "docling.*",
+  "docling_core.*",
+  "pandas.*",
+]
+ignore_missing_imports = true

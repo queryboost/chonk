@@ -1,17 +1,20 @@
-# chonk
+# chonkster
 
-**chonk** transforms your documents into an analytics-ready wide table (also known as a chonk or a chonky table). One row per page. One command. Uses Docling for parsing by default, with more backends coming.
+**chonkster** transforms your documents into an analytics-ready wide table. One row per page. One command.
 
-## Coming Soon
+## Installation
 
-### Installation
+```bash
+pip install chonkster
+```
 
-Package installation instructions coming soon.
+## Quickstart
 
-### Quickstart
+```python
+from chonkster import Chonk
 
-Usage examples and getting started guide coming soon.
+ck = Chonk()
+df = ck.parse("my-document.pdf")
+```
 
-### MCP
-
-MCP server integration coming soon.
+Supported formats: PDF, DOCX, PPTX, HTML, Markdown, and images (PNG, JPG, TIFF, BMP).
